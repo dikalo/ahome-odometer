@@ -28,8 +28,7 @@ public class BaseOdometerOptions extends JsObject {
 	}
 
 	/**
-	 * Change how digit groups are formatted, and how many digits are shown
-	 * after the decimal point.
+	 * Change how digit groups are formatted, and how many digits are shown after the decimal point.
 	 * <p>
 	 * 
 	 * <pre>
@@ -59,9 +58,12 @@ public class BaseOdometerOptions extends JsObject {
 		JsoHelper.setAttribute(jsObj, "theme", value);
 	}
 
+	public void setTheme(OdometerTheme theme) {
+		setTheme(theme.name().replace("_", "-").toLowerCase());
+	}
+
 	/**
-	 * Count is a simpler animation method which just increments the value, use
-	 * it when you're looking for something more subtle.
+	 * Count is a simpler animation method which just increments the value, use it when you're looking for something more subtle.
 	 */
 	public void setAnimation(String value) {
 		JsoHelper.setAttribute(jsObj, "animation", value);
