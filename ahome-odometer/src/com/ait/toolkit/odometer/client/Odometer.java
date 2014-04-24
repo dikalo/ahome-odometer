@@ -28,8 +28,7 @@ public class Odometer {
 
 	private static final String THEME_PREFIX = "odometer-theme";
 	private static final String VERSION = "0.4.6";
-	private static final String RESOURCE_FOLDER = GWT.getModuleBaseURL()
-			+ "ahomeOdometer/";
+	private static final String RESOURCE_FOLDER = GWT.getModuleBaseURL() + "ahomeOdometer/";
 	private JavaScriptObject odometerPeer;
 
 	static {
@@ -73,8 +72,7 @@ public class Odometer {
 	public static void load() {
 		if (!isLoaded()) {
 			OdometerResources resources = GWT.create(OdometerResources.class);
-			ScriptInjector.fromString(resources.js().getText())
-					.setWindow(ScriptInjector.TOP_WINDOW).inject();
+			ScriptInjector.fromString(resources.js().getText()).setWindow(ScriptInjector.TOP_WINDOW).inject();
 		}
 	}
 
@@ -84,11 +82,9 @@ public class Odometer {
 	}-*/;
 
 	public static void addTheme(OdometerTheme theme) {
-		String themeCss = THEME_PREFIX + "-"
-				+ theme.name().toLowerCase().replace("_", "-") + ".css";
+		String themeCss = THEME_PREFIX + "-" + theme.name().toLowerCase().replace("_", "-") + ".css";
 
-		CSSUtil.injectStyleSheet(RESOURCE_FOLDER + VERSION + "/themes/"
-				+ themeCss);
+		CSSUtil.injectStyleSheet(RESOURCE_FOLDER + VERSION + "/themes/" + themeCss);
 	}
 
 	public static native boolean isLoaded()/*-{
