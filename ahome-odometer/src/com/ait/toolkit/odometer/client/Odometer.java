@@ -21,7 +21,6 @@ import com.ait.toolkit.odometer.client.resources.OdometerResources;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.ScriptInjector;
-import com.google.gwt.user.client.Window;
 
 /**
  * Odometer class
@@ -84,9 +83,7 @@ public class Odometer {
 	}-*/;
 
 	public static void addTheme(OdometerTheme theme) {
-		Window.alert(GWT.getModuleBaseURL() + "," + GWT.getHostPageBaseURL() + "/" + GWT.getModuleName() + "ttt");
 		String themeCss = THEME_PREFIX + "-" + theme.name().toLowerCase().replace("_", "-") + ".css";
-
 		CSSUtil.injectStyleSheet(RESOURCE_FOLDER + VERSION + "/themes/" + themeCss);
 	}
 
